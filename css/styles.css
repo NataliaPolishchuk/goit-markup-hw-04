@@ -57,11 +57,12 @@ img {
   align-items: center;
   background-color: #fff;
 }
-.social-icons-link:hover {
+.social-icons-link:hover,
+.social-icons-link:focus{
   background-color: #2196f3;
 }
-.social-icons-link:hover.icon,
-.social-icons-link:focus.icon {
+.social-icons-link:hover .icon,
+.social-icons-link:focus .icon {
   fill: #ffffff;
 }
 .social-icons .social-icons-item + .social-icons-item {
@@ -72,9 +73,7 @@ img {
   height: 20px;
   fill: #afb1b8;
 }
-.social-icons:hover .icon {
-  fill: #ffffff;
-}
+
 .visually-hidden {
   position: absolute !important;
   clip: rect(1px 1px 1px 1px);
@@ -151,10 +150,13 @@ img {
   padding-top: 32px;
   padding-bottom: 32px;
 }
-
-.nav-contact {
+.nav-contact-item{
   display: flex;
+}
+.nav-contact {
   margin-left: auto;
+  
+  align-items: center;
 }
 .link-mail::before {
   content: "\2709";
@@ -162,10 +164,18 @@ img {
   height: 19px;
   margin-right: 10px;
 }
-.link-phone::before {
-  content: "";
+.contacts-icon{
   margin-right: 10px;
 }
+.phone-icon{
+  width: 10px;
+  height: 16px;
+}
+.link-phone:hover .phone-icon,
+.link-phone:focus .phone-icon {
+  fill: #2196F3;
+}
+
 .nav-contact .nav-contact-item + .nav-contact-item {
   margin-left: 50px;
 }
@@ -397,14 +407,12 @@ img {
   letter-spacing: 0.03em;
   
 }
-.clients-link:hover {
-  border: 1px solid rgba(33, 150, 243, 1)
-}
-.clients-link:hover.clients-icon,
-.clients-link:focus.clients-icon {
+.clients-link:hover ,
+.clients-link:focus {
+  border: 1px solid rgba(33, 150, 243, 1);
   fill: rgba(33, 150, 243, 1);
-  
 }
+
 .clients-list .clients-item + .clients-item {
   margin-left: 30px;
 }
@@ -415,6 +423,7 @@ img {
   display: flex;
   width: 170px;
   height: 90px;
+  border-radius: 4px;
   border: 1px solid rgba(175, 177, 184, 1);
   justify-content: center;
   align-items: center;
@@ -432,12 +441,11 @@ img {
   height: 42px;
   fill: #afb1b8;
 }
-.clients-list:hover .clients-icon {
+.clients-link:hover .clients-icon,
+.clients-link:focus .clients-icon{
   fill:rgba(33, 150, 243, 1);
   
 }
-
-
 
 
 
@@ -521,9 +529,11 @@ footer {
   padding-bottom: 60px;
   background-color: #2f303a;
 }
-.page-footer {
-  display: inline-block;
+.container .page-footer {
+  display: flex;
+  align-items: baseline;
 }
+
 .link {
   font-weight: 500;
   font-size: 14px;
@@ -534,7 +544,15 @@ footer {
   padding: 10px 0 10px 0;
   text-decoration: none;
 }
-
+.page-footer{
+  display: inline-flex;
+  
+  align-items: baseline;
+}
+.page-footer-div2{
+  margin-left: 70px;
+  align-items: center;
+}
 .nav-contact {
   margin-left: auto;
   display: flex;
@@ -571,15 +589,28 @@ footer {
 
   color: #ffffff;
 }
-.footer-navi {
-  display: inline-flex;
+.footer-box-div1:not(:last-child) {
+  margin-right: 70px;
 }
-
+.list{
+  display: flex;
+}
 .link:hover,
 .link:focus {
   color: #2196f3;
 }
+.list .icon{
+  fill: #ffffff;
+}
+footer .social-icons-link{
+  background: rgba(255, 255, 255, 0.1);
 
+box-sizing: border-box;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.footer-social{
+  display: flex;
+}
 .address {
   margin-top: 20px;
 }
@@ -696,4 +727,12 @@ footer {
 .button-portfolio {
   display: flex;
   justify-content: center;
+}
+.galerie-item:hover{
+  background: #FFFFFF;
+border: 1px solid #EEEEEE;
+box-sizing: border-box;
+box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12),
+            0px 4px 4px rgba(0, 0, 0, 0.06), 
+            1px 4px 6px rgba(0, 0, 0, 0.16);
 }
